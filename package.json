@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "homepage": "stagiaires.tg",
+  "homepage": "arcinvoice.com",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "Wisdom TOHE",
+  "author": "Panshak Solomon",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
