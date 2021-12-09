@@ -3,10 +3,10 @@
   "homepage": "stagiaires.tg",
   "version": "1.0.0",
   "description": "",
-  "main": "./server/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./server/index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "Wisdom TOHE",
