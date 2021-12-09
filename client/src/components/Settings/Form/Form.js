@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { Avatar, Button, Paper, Grid, Container } from '@material-ui/core';
 import Uploader from './Uploader';
-import { getProfilesByUser, updateProfile } from '../../../actions/profile';
+import { getProfilesByUser, updateProfile } from '../../../redux/actions/profile';
 import useStyles from './styles';
 import Input from './Input';
 
@@ -65,7 +65,7 @@ const Settings = () => {
          <p>{profiles?.contactAddress}</p>
          <p>{profiles?.phoneNumber}</p>
          <p>{profiles?.email}</p>
-         <Button variant="outlined" style={{margin: '30px', padding: '15px 30px'}} onClick={() => setSwitchEdit(1)}>Edit Profile</Button>
+         <Button variant="outlined" style={{margin: '30px', padding: '15px 30px'}} onClick={() => setSwitchEdit(1)}>Modifier le Profil</Button>
        </Paper>
        </Container>
      )}
@@ -78,13 +78,13 @@ const Settings = () => {
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Uploader form={form} setForm={setForm} />
-            <Input name="email" label="Email Address" handleChange={handleChange} type="email" half value={form?.email} />
-            <Input name="phoneNumber" label="Phone Number" handleChange={handleChange} type="text" half value={form?.phoneNumber}/>
-            <Input name="businessName" label="Business Name" handleChange={handleChange} type="text" value={form?.businessName}/>
-            <Input name="contactAddress" label="Contact Address" handleChange={handleChange} type="text" value={form?.contactAddress} />
+            <Input name="email" label="Adresse Email" handleChange={handleChange} type="email" half value={form?.email} />
+            <Input name="phoneNumber" label="Numéro de téléphone" handleChange={handleChange} type="text" half value={form?.phoneNumber}/>
+            <Input name="businessName" label="Nom de l'école" handleChange={handleChange} type="text" value={form?.businessName}/>
+            <Input name="contactAddress" label="Adresse" handleChange={handleChange} type="text" value={form?.contactAddress} />
           </Grid>
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-           Update Settings
+           Mettre à jour
           </Button>
           <Grid container justifyContent="flex-end">
           </Grid>

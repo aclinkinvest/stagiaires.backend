@@ -23,10 +23,12 @@ import DeleteOutlineRoundedIcon from '@material-ui/icons/DeleteOutlineRounded';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { useLocation } from 'react-router-dom';
 
-import { deleteInvoice, getInvoicesByUser } from '../../actions/invoiceActions';
+import { deleteInvoice, getInvoicesByUser } from '../../redux/actions/invoiceActions';
 import NoData from '../svgIcons/NoData';
 import Spinner from '../Spinner/Spinner'
 import { useSnackbar } from 'react-simple-snackbar'
+import Header from "../Header/Header";
+import NavBar from "../NavBar/NavBar";
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
@@ -180,20 +182,27 @@ const Invoices = () => {
 }
 
   if(isLoading) {
-    return  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingTop: '20px'}}>
+    return  <><Header/>
+            {user && <NavBar />}
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingTop: '20px'}}>
         <Spinner />
     </div>
+      </>
   }
 
   if(rows.length === 0) {
-    return  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingTop: '20px', margin: '80px'}}>
+    return  <><Header/>
+            {user && <NavBar />}<div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingTop: '20px', margin: '80px'}}>
       <NoData />
     <p style={{padding: '40px', color: 'gray', textAlign: 'center'}}>No invoice yet. Click the plus icon to create invoice</p>
   
     </div>
+      </>
   }
   
   return (
+      <><Header/>
+            {user && <NavBar />}
     <div>
     <Container style={{width: '85%', paddingTop: '70px', paddingBottom: '50px', border: 'none'}} >
         <TableContainer component={Paper} elevation={0}>
@@ -264,6 +273,7 @@ const Invoices = () => {
     </TableContainer>
     </Container>
   </div>
+        </>
   );
 }
 

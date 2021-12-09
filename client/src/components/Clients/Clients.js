@@ -24,7 +24,7 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { Button } from '@material-ui/core';
 import { useSnackbar } from 'react-simple-snackbar'
 
-import { deleteClient } from '../../actions/clientActions';
+import { deleteClient } from '../../redux/actions/clientActions';
 // import clients from '../../clients.json'
 
 const useStyles1 = makeStyles((theme) => ({
@@ -62,24 +62,24 @@ function TablePaginationActions(props) {
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
-        aria-label="first page"
+        aria-label="première page"
       >
         {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
       </IconButton>
-      <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="previous page">
+      <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="page précédente">
         {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
       </IconButton>
       <IconButton
         onClick={handleNextButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page"
+        aria-label="page suivante"
       >
         {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
       </IconButton>
       <IconButton
         onClick={handleLastPageButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="last page"
+        aria-label="dernière page"
       >
         {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
       </IconButton>
@@ -150,12 +150,12 @@ const headerStyle = { borderBottom: 'none', textAlign: 'center'}
 
       <TableHead>
           <TableRow>
-            <TableCell style={{...headerStyle, width: '10px'}}>Number</TableCell>
-            <TableCell style={headerStyle}>Name</TableCell>
+            <TableCell style={{...headerStyle, width: '10px'}}>Numéro</TableCell>
+            <TableCell style={headerStyle}>Nom</TableCell>
             <TableCell style={headerStyle}>Email</TableCell>
-            <TableCell style={headerStyle}>Phone</TableCell>
-            <TableCell style={headerStyle}>Edit</TableCell>
-            <TableCell style={headerStyle}>Delete</TableCell>
+            <TableCell style={headerStyle}>Téléphone</TableCell>
+            <TableCell style={headerStyle}>Modifier</TableCell>
+            <TableCell style={headerStyle}>Supprimer</TableCell>
             
           </TableRow>
         </TableHead>
@@ -192,13 +192,13 @@ const headerStyle = { borderBottom: 'none', textAlign: 'center'}
         <TableFooter>
           <TableRow>
             <TablePagination
-              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+              rowsPerPageOptions={[5, 10, 25, { label: 'Toutes', value: -1 }]}
               colSpan={6}
               count={rows.length}
               rowsPerPage={rowsPerPage}
               page={page}
               SelectProps={{
-                inputProps: { 'aria-label': 'rows per page' },
+                inputProps: { 'aria-label': 'Lignes par page' },
                 native: true,
               }}
               onPageChange={handleChangePage}

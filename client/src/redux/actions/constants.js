@@ -13,6 +13,20 @@ export const DELETE_CLIENT = "DELETE_CLIENT"
 export const ADD_NEW_CLIENT = "ADD_NEW_CLIENT"
 export const FETCH_CLIENTS_BY_USER = 'FETCH_PROFILE_USER';
 
+export const FETCH_ALL_CVPROS = "FETCH_ALL_CVPROS"
+export const UPDATE_CVPRO = "UPDATE_CVPRO"
+export const FETCH_CVPRO = 'FETCH_CVPRO';
+export const DELETE_CVPRO = "DELETE_CVPRO"
+export const ADD_NEW_CVPRO = "ADD_NEW_CVPRO"
+export const FETCH_CVPROS_BY_CANDIDATE = 'FETCH_PROFILE_CANDIDATE';
+
+export const ALL_OFFERS = "ALL_OFFERS"
+export const FETCH_OFFER = 'FETCH_OFFER';
+/*export const UPDATE_OFFER = "UPDATE_OFFER"
+export const DELETE_OFFER = "DELETE_OFFER"
+export const ADD_NEW_OFFER = "ADD_NEW_OFFER"*/
+export const FETCH_OFFERS_BY_COMPANY = 'FETCH_OFFERS_BY_COMPANY';
+
 export const AUTH = "AUTH"
 export const LOGOUT = "LOGOUT"
 export const UPDATE_USER = "UPDATE_USER"

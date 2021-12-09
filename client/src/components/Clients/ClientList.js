@@ -2,11 +2,13 @@
 import React, { useState, useEffect} from 'react'
 import Clients from './Clients'
 import AddClient from './AddClient'
-import { getClientsByUser } from '../../actions/clientActions'
+import { getClientsByUser } from '../../redux/actions/clientActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useHistory } from 'react-router-dom'
 import NoData from '../svgIcons/NoData'
 import Spinner from '../Spinner/Spinner'
+ import Header from "../Header/Header";
+ import NavBar from "../NavBar/NavBar";
 
 
 const ClientList = () => {
@@ -51,12 +53,14 @@ useEffect(() => {
   if(clients.length === 0) {
     return  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingTop: '20px', margin: '80px'}}>
       <NoData />
-    <p style={{padding: '40px', color: 'gray', textAlign: 'center'}}>No customers yet. Click the plus icon to add customer</p>
+    <p style={{padding: '40px', color: 'gray', textAlign: 'center'}}>Aucun client pour le moment, appuyez sur le bouton + pour en ajouter.</p>
   
     </div>
   }
 
     return (
+        <><Header/>
+            {user && <NavBar />}
         <div>
             <AddClient 
                 open={open} 
@@ -72,6 +76,7 @@ useEffect(() => {
                 clients={clients}
             />
         </div>
+            </>
     )
 }
 

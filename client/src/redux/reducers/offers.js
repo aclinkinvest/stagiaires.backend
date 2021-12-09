@@ -1,5 +1,5 @@
 
-import { FETCH_ALL, ADD_NEW, UPDATE, DELETE, FETCH_OFFER, START_LOADING, END_LOADING, FETCH_OFFERS_BY_COMPANY } from '../actions/constants'
+import { FETCH_ALL, ADD_NEW, UPDATE, DELETE, FETCH_CVPRO, START_LOADING, END_LOADING, FETCH_OFFERS_BY_COMPANY } from '../actions/constants'
 
 const offers = (state = { isLoading: true, offers: [] }, action) => {
     switch (action.type) {
@@ -17,7 +17,7 @@ const offers = (state = { isLoading: true, offers: [] }, action) => {
       case FETCH_OFFERS_BY_COMPANY:
         return { ...state, offers: action.payload };
 
-      case FETCH_OFFER:
+      case FETCH_CVPRO:
         return { ...state, offer: action.payload };
       case ADD_NEW:
         return { ...state, offers: [...state.offers, action.payload] };

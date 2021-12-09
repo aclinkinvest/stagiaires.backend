@@ -25,6 +25,13 @@ export const updateClient = (id, updatedClient) => API.patch(`/clients/${id}`, u
 export const deleteClient =(id) => API.delete(`/clients/${id}`)
 export const fetchClientsByUser = (searchQuery) => API.get(`/clients/user?searchQuery=${searchQuery.search}`);
 
+export const fetchOffer = (id) => API.get(`/offers/${id}`);
+export const fetchOffers = (page) => API.get(`/offers?page=${page}`);
+export const addOffer =( offer ) => API.post('/offers', offer)
+export const updateOffer = (id, updatedOffer) => API.patch(`/offers/${id}`, updatedOffer)
+export const deleteOffer =(id) => API.delete(`/offers/${id}`)
+export const fetchOffersByCompany = (searchQuery) => API.get(`/offers/user?searchQuery=${searchQuery.search}`);
+
 
 export const signIn =(formData)=> API.post('/users/signin', formData)
 export const signUp =(formData)=> API.post('/users/signup', formData)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styles from './Footer.module.css'
 import FabButton from '../Fab/Fab'
 
@@ -13,9 +13,13 @@ const Footer = () => {
 
     return (
         <footer>
-            <div className={styles.footerText}>
-            ©Arc Invoice| made with ♥ by Panshak Solomon <span><a href="https://github.com/Panshak/arcinvoice" target="_blank" rel="noopener noreferrer">[Download source code]</a></span>
-            </div>
+            <div className="utf-footer-copyright-item sticky">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-12">Copyright &copy; 2021 Stagiaires.tg Tous droits reservés. | <Link to="/">Mentions légales</Link> | <Link to="/">Politique de confidentialité</Link></div>
+                        </div>
+                    </div>
+                </div>
             {user && (
             <FabButton />
             )}

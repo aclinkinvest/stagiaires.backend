@@ -31,8 +31,8 @@ import Chip from '@material-ui/core/Chip';
 
 import {initialState} from '../../initialState'
 import currencies from '../../currencies.json'
-import { createInvoice, getInvoice, updateInvoice } from '../../actions/invoiceActions';
-import { getClientsByUser } from '../../actions/clientActions'
+import { createInvoice, getInvoice, updateInvoice } from '../../redux/actions/invoiceActions';
+import { getClientsByUser } from '../../redux/actions/clientActions'
 import AddClient from './AddClient';
 import InvoiceType from './InvoiceType';
 import Header from "../Header/Header";

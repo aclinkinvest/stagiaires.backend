@@ -1,13 +1,24 @@
 import * as api from '../../api'
 
-import { ADD_NEW_CLIENT, UPDATE_CLIENT, DELETE_CLIENT, FETCH_CLIENTS_BY_USER, FETCH_CLIENT, START_LOADING, END_LOADING } from './constants'
+import { /*ADD_NEW_OFFER, UPDATE_OFFER, DELETE_OFFER,*/ FETCH_OFFERS_BY_COMPANY, FETCH_OFFER, ALL_OFFERS, START_LOADING, END_LOADING } from './constants'
 
 
-export const getClient = (id) => async (dispatch) => {
+export const getOffer = (id) => async (dispatch) => {
     try {
       dispatch({ type: START_LOADING });
-      const { data } = await api.fetchClient(id);
-      dispatch({ type: FETCH_CLIENT, payload: { client: data } });
+      const { data } = await api.fetchOffer(id);
+      dispatch({ type: FETCH_OFFER, payload: { client: data } });
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+export const getAllOffers = (id) => async (dispatch) => {
+    try {
+      dispatch({ type: START_LOADING });
+      const { data } = await api.fetchOffer(id);
+      dispatch({ type: FETCH_OFFER, payload: { client: data } });
 
     } catch (error) {
       console.log(error);
@@ -15,12 +26,12 @@ export const getClient = (id) => async (dispatch) => {
   };
 
 
-export const getClientsByUser =(searchQuery) => async (dispatch) => {
+export const fetchOffersByCompany =(searchQuery) => async (dispatch) => {
     try {
       dispatch({ type: START_LOADING })
-    const  { data: { data } } = await api.fetchClientsByUser(searchQuery)
+    const  { data: { data } } = await api.fetchOffersByCompany(searchQuery)
       
-      dispatch({ type: FETCH_CLIENTS_BY_USER, payload: data });
+      dispatch({ type: FETCH_OFFERS_BY_COMPANY, payload: data });
       dispatch({ type: END_LOADING })
     } catch (error) {
       console.log(error.response)
@@ -28,12 +39,13 @@ export const getClientsByUser =(searchQuery) => async (dispatch) => {
     }
   }
 
+/*
 
-export const createClient =(client, openSnackbar) => async (dispatch) => {
+export const createOffer =(client, openSnackbar) => async (dispatch) => {
 
     try {
-        const { data } = await api.addClient(client)
-        dispatch({ type: ADD_NEW_CLIENT, payload: data })
+        const { data } = await api.addOffer(client)
+        dispatch({ type: ADD_NEW_OFFER, payload: data })
         openSnackbar("Customer added successfully")
 
     } catch (error) {
@@ -42,10 +54,10 @@ export const createClient =(client, openSnackbar) => async (dispatch) => {
 }
 
 
-export const updateClient =(id, client, openSnackbar) => async (dispatch) => {
+export const updateOffer =(id, client, openSnackbar) => async (dispatch) => {
 
-    const { data } = await api.updateClient(id, client)
-    dispatch({ type: UPDATE_CLIENT, payload: data })
+    const { data } = await api.updateOffer(id, client)
+    dispatch({ type: UPDATE_OFFER, payload: data })
     openSnackbar("Customer updated successfully")
     try {
         
@@ -54,13 +66,13 @@ export const updateClient =(id, client, openSnackbar) => async (dispatch) => {
     }
 }
 
-export const deleteClient =(id, openSnackbar) => async (dispatch) => {
+export const deleteOffer =(id, openSnackbar) => async (dispatch) => {
     try {
-        await api.deleteClient(id)
+        await api.deleteOffer(id)
 
-        dispatch({type: DELETE_CLIENT, payload: id})
+        dispatch({type: DELETE_OFFER, payload: id})
         openSnackbar("Customer deleted successfully")
     } catch (error) {
         console.log(error)
     }
-}
+}*/

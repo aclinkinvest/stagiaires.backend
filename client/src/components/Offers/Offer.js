@@ -8,7 +8,7 @@ import {useHistory, useParams} from "react-router-dom";
 import { createInvoice, getOffer, updateInvoice } from '../../redux/actions/offers';
 import * as api from "../../api";
 
-const Offre = () => {
+const Offer = () => {
 
 	const initialState = {
 		recruiter: {
@@ -33,18 +33,13 @@ const Offre = () => {
 	}
 
 	const [offerData, setOfferData] = useState(initialState)
-    const [ rates, setRates] = useState(0)
-    const [vat, setVat] = useState(0)
-    const [currency, setCurrency] = useState(currencies[0].value)
-    const [subTotal, setSubTotal] = useState(0)
-    const [total, setTotal] = useState(0)
     const today = new Date();
     const [selectedDate, setSelectedDate] = useState(today.getTime() + 7 * 24 * 60 * 60 * 1000);
     const [ client, setClient] = useState(null)
     const [type, setType] = React.useState('Offer')
     const [status, setStatus ] = useState('')
     const { id } = useParams()
-    const clients = useSelector((state) => state.clients.clients)
+    const clients = useSelector((state) => state.offers.offers)
     const { offer } = useSelector((state) => state.offers);
     const dispatch = useDispatch()
     const history = useHistory()
@@ -82,11 +77,6 @@ const Offre = () => {
         }
     },[type])
 
-    const defaultProps = {
-        options: currencies,
-        getOptionLabel: (option) => option.label
-      };
-
     const clientsProps = {
         options: clients,
         getOptionLabel: (option) => option.name
@@ -111,7 +101,7 @@ const Offre = () => {
 
     }
 
-    useEffect(() => {
+    /*useEffect(() => {
             //Get the subtotal
             const subTotal =()=> {
             var arr = document.getElementsByName("amount");
@@ -127,7 +117,7 @@ const Offre = () => {
 
         subTotal()
 
-    }, [offerData])
+    }, [offerData])*/
 
 
 
@@ -144,46 +134,6 @@ const Offre = () => {
         // console.log(values)
     }
 
-    const handleSubmit =  async (e ) => {
-        e.preventDefault()
-        if(offer) {
-         dispatch(updateOffer( offer._id, {
-             ...offerData,
-             subTotal: subTotal,
-             total: total,
-             vat: vat,
-             rates: rates,
-             currency: currency,
-             dueDate: selectedDate,
-             client,
-             type: type,
-             status: status
-            }))
-         history.push(`/offer/${offer._id}`)
-        } else {
-
-        dispatch(createOffer({
-            ...offerData,
-            subTotal: subTotal,
-            total: total,
-            vat: vat,
-            rates: rates,
-            currency: currency,
-            dueDate: selectedDate,
-            client,
-            type: type,
-            status: status,
-            paymentRecords: [],
-            creator: [user?.result?._id || user?.result?.googleId] },
-            history
-            ))
-        }
-
-        // setOfferData(initialState)
-    }
-
-    const classes = useStyles()
-    const [open, setOpen] = useState(false);
 
     const CustomPaper = (props) => {
         return <Paper elevation={3} {...props} />;
@@ -228,4 +178,4 @@ const Offre = () => {
     )
 }
 
-export default Offre
+export default Offer

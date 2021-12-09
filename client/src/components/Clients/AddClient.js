@@ -12,7 +12,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 
 import { useDispatch, useSelector } from 'react-redux'
-import { createClient, updateClient } from '../../actions/clientActions'
+import { createClient, updateClient } from '../../redux/actions/clientActions'
 import { useSnackbar } from 'react-simple-snackbar'
 
 const styles = (theme) => ({
@@ -135,14 +135,14 @@ const AddClient = ({ setOpen, open, currentId, setCurrentId }) => {
         <form >
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} fullWidth>
             <DialogTitle id="customized-dialog-title" onClose={handleClose} style={{paddingLeft: '20px', color: 'white'}}>
-            {currentId? 'Edit Customer' : 'Add new Client'}
+            {currentId? 'Modifier un client' : 'Ajouter nouveau client'}
             </DialogTitle>
             <DialogContent dividers>
 
 
             <div className="customInputs">
               <input 
-                placeholder="Name" 
+                placeholder="Nom"
                 style={inputStyle} 
                 name='name' 
                 type='text'  
@@ -160,7 +160,7 @@ const AddClient = ({ setOpen, open, currentId, setCurrentId }) => {
               />
 
               <input 
-                placeholder="Phone" 
+                placeholder="Téléphone"
                 style={inputStyle} 
                 name='phone' 
                 type='text'  
@@ -169,7 +169,7 @@ const AddClient = ({ setOpen, open, currentId, setCurrentId }) => {
               />
 
               <input 
-                placeholder="Address" 
+                placeholder="Adresse"
                 style={inputStyle} 
                 name='address' 
                 type='text' 
@@ -181,7 +181,7 @@ const AddClient = ({ setOpen, open, currentId, setCurrentId }) => {
             </DialogContent>
             <DialogActions>
             <Button  onClick={handleSubmitClient}  variant="contained" style={{marginRight: '25px'}} >
-                Save Customer
+                Enrégistrer le client
             </Button>
             </DialogActions>
       </Dialog>

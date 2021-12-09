@@ -1,167 +1,64 @@
 import React from 'react'
-import Typed from 'react-typed';
-import NewsletterSubscribe from './Partials/NewsletterSubscribe';
-import NosMeilleursPartenaires from './Partials/NosMeilleursPartenaires';
-import Footer from "./Partials/Footer";
-import { Link } from 'react-router-dom';
 
-const About = () => {
+const Footer = () => {
    
     return (
-        <div>
-        <div className="intro-banner"
-        style={{
-          // paddingBottom:"70px",
-          backgroundImage: "url(images/bg-home2.jpg)",
-          backgroundSize: 'cover',
-          width: '100%',
-          backgroundPosition: '90%'
-        }}
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="utf-banner-headline-text-part  margin-top-5">
-                  <h3>A LA RECHERCHE
-                    <span className="typed-words">
-                      <Typed
-                        strings={["&nbsp;D'UN STAGE ?", "&nbsp;D'UN 1<sup>er</sup> EMPLOI ?"]}
-                        typeSpeed={50}
-                        backSpeed={50}
-                        backDelay={1000}
-                        startDelay={500}
-                        loop={true}
-                        showCursor={true}
+        <div className="utf-footer-section-item-block">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-4 col-md-12">
+                                <div className="utf-footer-item-links">
+                                    <a href="index.html"><img className="footer-logo" src="images/footer_logo.png" alt="" /></a>
+                                    <p>
+                                        Dans un monde en pleine mutation digitale, nous mettons à votre disposition une plateforme innovante, simple et intuitive pour aider les entreprises et leurs candidats à relever ce défi numérique pour mieux se choisir, afin de mieux travailler ensemble et plus longtemps.
+                                    </p>
+                                </div>
+                            </div>
 
-                      />
-                  </span>
-                  </h3>
-                  <span className="banner_text">Bienvenue sur le premier assistant virtuel qui facilite  <br /> la vie des <b style={{ color: "white", fontSize: "26px;" }}>étudiants</b>, des <b style={{ color: "white", fontSize: "26px;" }}>jeunes diplômés</b> et des <b style={{ color: "white", fontSize: "26px;" }}>recruteurs</b> </span>
-                </div>
-              </div>
-            </div>
+                            <div className="col-xl-3 col-md-3 col-sm-6">
+                                <div className="utf-footer-item-links">
+                                    <h3>Utilisation</h3>
+                                    <ul>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Mention légales</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Conditions Générales d’Utilisation</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Conditions Générales de vente</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Politique de confidentialité</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Politique des cookies</span></a></li>
+                                        <li><a href="login.html"><i className="icon-feather-chevrons-right"></i> <span>Mon Compte</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
-            <div className="row">
-              <div className="col-xl-12">
-                <ul style={{ alignItems: "center" }} className="intro-stats margin-top-50">
-                  <li
-                    style={{
-                      marginRight: "60px", marginLeft: "60px",
-                      borderRadius: "4px", border: "1px solid rgba(255, 255, 255, 0.10)",
-                      lineHeight: "60px"
-                    }}
-                  ><Link to="/creer-compte-candidat">
-                      <strong style={{ fontSize: "25px", fontFamily: "arial" }} > <b>JE SUIS CANDIDAT</b> </strong>
-                    </Link>
-                  </li>
-                  <li
-                    style={{ backgroundColor: "#1E9A75", marginRight: "60px", borderRadius: "4px", border: "1px solid rgba(255, 255, 255, 0.10)", lineHeight: "60px" }}
+                            <div className="col-xl-3 col-md-3 col-sm-6">
+                                <div className="utf-footer-item-links">
+                                    <h3>Aide</h3>
+                                    <ul>
+                                        <li><a href="faq.html"><i className="icon-feather-chevrons-right"></i> <span>FAQ Foire aux Questions</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Conseils et astuces Candidats</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Logiciel de recrutement SaaS</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Tarifs & Packs Recruteurs</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Demander une Démo</span></a></li>
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Faire un Essai Gratuit</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                  >
-                    <Link to="/creer-compte-recruteur">
-                      <strong style={{ fontSize: "25px" }}> <b>JE SUIS RECRUTEUR</b> </strong>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="section padding-top-40 padding-bottom-10">
-              <div className="container">
-                <div className="row">
-                  <div className="col-xl-12">
-
-                    <div className="col-md-12">
-                      <NosMeilleursPartenaires />
+                            <div className="col-xl-2 col-md-3 col-sm-6">
+                                <div className="utf-footer-item-links">
+                                    <h3>L'entreprise</h3>
+                                    <ul>
+                                        <li><a href="a-propos.html"><i className="icon-feather-chevrons-right"></i> <span>A propos de nous</span></a></li>
+                                        <li><a href="contact.html"><i className="icon-feather-chevrons-right"></i> <span>Nous contacter</span></a></li>
+                                        <li><a href="recruteurs-liste.html"><i className="icon-feather-chevrons-right"></i> <span>Nos partenaires</span></a></li>
+                                        {/* <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Blog</span></a></li> */}
+                                        <li><a href="#"><i className="icon-feather-chevrons-right"></i> <span>Liens utiles</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div style={{ textAlign: "center" }} className="centered">
-              <h3 style={{ color: "white", fontWeight: "bolder", fontSize: "30px" }}> <b>C'EST FACILE !</b></h3>
-            </div>
-          </div>
-        </div>
-
-        <div className="section padding-bottom-50">
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-3 col-md-6 col-sm-12">
-                <div className="icon-box with-line bg-box">
-                  <div className="utf-icon-box-circle">
-                    <div className="utf-icon-box-circle-inner"> <i className="icon-line-awesome-user-secret"></i></div>
-                  </div>
-                  <h3>1. Crée gratuitement ton CV Pro en ligne !</h3>
-                  <p>Création d'un espace privé Gratuit & meilleur matching des offres à ton profil,...</p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6 col-sm-12">
-                <div className="icon-box with-line bg-box">
-                  <div className="utf-icon-box-circle">
-                    <div className="utf-icon-box-circle-inner"> <i className="icon-line-awesome-user-plus"></i></div>
-                  </div>
-                  <h3>2. Sélectionne tes critères</h3>
-                  <p>Villes, Métiers, Poste, Date, etc….<br /><br /></p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6 col-sm-12">
-                <div className="icon-box bg-box">
-                  <div className="utf-icon-box-circle">
-                    <div className="utf-icon-box-circle-inner"> <i className="icon-line-awesome-edit"></i></div>
-                  </div>
-                  <h3>3. Postule en un clic <br /><br /></h3>
-                  <p>Nous pouvons le faire chaque jour automatiquement pour les offres qui te correspondent !</p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6 col-sm-12">
-                <div className="icon-box bg-box">
-                  <div className="utf-icon-box-circle">
-                    <div className="utf-icon-box-circle-inner"> <i className="icon-line-awesome-save"></i></div>
-                  </div>
-                  <h3>4.	Suis en temps réel l’évolution de tes candidatures !</h3>
-                  <p>Reçois les notifications sur ton smartphone des recruteurs</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="margin-bottom-80"
-          style={{
-            backgroundImage: "url(images/recruteur.jpg)",
-            backgroundSize: 'cover',
-            height: '100%',
-            width: '100%',
-            backgroundPosition: '100%'
-          }}>
-          <div className="text-content white-font" >
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-8 col-md-12 col-sm-12">
-                  <h2>Accroche recruteur</h2>
-                  <p>Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic type setting, remaining essentially unchanged.
-                    It was popularised.<br /><br />Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic type setting, remaining essentially unchanged.
-                    It was popularised.<br /><br /></p>
-
-                </div>
-                <div className="col-lg-4 col-md-6 col-sm-12">
-                  <div className="download-img">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <NewsletterSubscribe />
-        <Footer />
-      </div>
     )
 }
 
-export default About
+export default Footer

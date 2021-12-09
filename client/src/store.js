@@ -1,8 +1,4 @@
 
-//store
-//array of booorowers
-
-
 const store = [
     {name: 'gps', quantity: 500, type: 'gps'},
     {name: 'mistnet', quantity: 500, type: 'misnet'},

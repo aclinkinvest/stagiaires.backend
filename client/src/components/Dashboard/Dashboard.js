@@ -3,13 +3,15 @@ import { toCommas } from '../../utils/utils'
 import styles from './Dashboard.module.css'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { getInvoicesByUser } from '../../actions/invoiceActions'
+import { getInvoicesByUser } from '../../redux/actions/invoiceActions'
 import Empty from '../svgIcons/Empty'
 import Chart from './Chart'
 // import Donut from './Donut'
 import moment from 'moment'
 import { Check, Pie, Bag, Card, Clock, Frown } from './Icons'
 import Spinner from '../Spinner/Spinner'
+import Header from "../Header/Header";
+import NavBar from "../NavBar/NavBar";
 
 
 const Dashboard = () => {
@@ -77,16 +79,21 @@ const Dashboard = () => {
         </div>
       }
 
-      if(invoices.length === 0) {
-        return  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingTop: '20px'}}>
-            {/* <Spinner /> */}
+      /*if(invoices.length === 0) {
+        return  <><Header/>
+            {user && <NavBar />}
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingTop: '20px'}}>
+            {/!* <Spinner /> *!/}
           <Empty />
         <p style={{padding: '40px', color: 'gray'}}>Nothing to display. Click the plus icon to start creating</p>
         </div>
-      }
+            </>
+      }*/
 
       
     return (
+        <><Header/>
+            {user && <NavBar />}
         <div className={styles.pageContainer}>
            
     
@@ -95,7 +102,7 @@ const Dashboard = () => {
                         <li className={styles.listItem} style={{backgroundColor: '#1976d2', color: 'white'}}>
                             <div>
                                 <p>{toCommas(totalPaid)}</p>
-                                <h2 style={{color: 'white'}}>Payment Received</h2>
+                                <h2 style={{color: 'white'}}>Candidatures</h2>
                             </div>
                             <div>
                                 <Check />
@@ -105,7 +112,7 @@ const Dashboard = () => {
                         <li className={styles.listItem} >
                             <div>
                                 <p>{toCommas(totalAmount - totalPaid)}</p>
-                                <h2>Pending Amount</h2>
+                                <h2>Matchs</h2>
                             </div>
                             <div>
                                 <Pie />
@@ -115,7 +122,7 @@ const Dashboard = () => {
                         <li className={styles.listItem} >
                             <div>
                                 <p>{toCommas(totalAmount)}</p>
-                                <h2>Total Amount</h2>
+                                <h2>Offres à voir</h2>
                             </div>
                             <div>
                                 <Bag />
@@ -125,7 +132,7 @@ const Dashboard = () => {
                         <li className={styles.listItem} >
                             <div>
                                 <p>{invoices.length}</p>
-                                <h2>Total Invoices</h2>
+                                <h2>Notifications</h2>
                             </div>
                             <div>
                                 <Card />
@@ -136,13 +143,13 @@ const Dashboard = () => {
                         <li className={styles.listItem} style={{backgroundColor: '#206841', color: 'white'}}>
                             <div>
                                 <p>{paid.length}</p>
-                                <h2 style={{color: 'white'}}>Paid Invoices</h2>
+                                <h2 style={{color: 'white'}}>Calendrier</h2>
                             </div>
                             <div>
                                 <Check />
                             </div>
                         </li>
-
+{/*
                         <li className={styles.listItem} >
                             <div>
                                 <p>{partial.length}</p>
@@ -171,7 +178,7 @@ const Dashboard = () => {
                             <div>
                                 <Clock />
                             </div>
-                        </li>
+                        </li>*/}
                         
                  
                 </ul>
@@ -184,7 +191,7 @@ const Dashboard = () => {
             </section>
             )}
 
-                <section>
+                {/*<section>
                 <h1 style={{textAlign: 'center', padding: '30px' }}>{paymentHistory.length ? 'Recent Payments' : 'No payment received yet'}</h1>
                     <div>
                     <div className={styles.table}>
@@ -217,9 +224,10 @@ const Dashboard = () => {
                         </table>
                     </div>
                     </div>
-                </section>
+                </section>*/}
            
         </div>
+            </>
     )
 }
 

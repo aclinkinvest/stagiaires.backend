@@ -4,7 +4,7 @@ import { useSnackbar } from 'react-simple-snackbar'
 import { useLocation, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { initialState } from '../../initialState'
-import { getInvoice } from '../../actions/invoiceActions'
+import { getInvoice } from '../../redux/actions/invoiceActions'
 import { toCommas } from '../../utils/utils'
 import styles from './InvoiceDetails.module.css'
 import moment from 'moment'
@@ -30,6 +30,8 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 import Modal from '../Payments/Modal'
 import PaymentHistory from './PaymentHistory'
+import Header from "../Header/Header";
+import NavBar from "../NavBar/NavBar";
 
 const InvoiceDetails = () => {
 
@@ -193,13 +195,17 @@ const [open, setOpen ] = useState(false)
 
 
 if(!invoice) {
-  return (
+  return (<><Header/>
+            {user && <NavBar />}
     <Spinner />
+      </>
   )
 }
 
 
     return (
+        <><Header/>
+            {user && <NavBar />}
         <div className={styles.PageLayout}>
            {invoice?.creator?.includes(user?.result?._id || user?.result?.googleId) && (
             <div className={styles.buttons}>
@@ -370,7 +376,7 @@ if(!invoice) {
         </form>
     </div>
         </div>
-        
+        </>
     )
 }
 

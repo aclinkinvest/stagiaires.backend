@@ -5,7 +5,7 @@ import useStyles from './styles';
 import Field from '../Login/Field';
 import { useParams, useHistory } from 'react-router-dom'
 
-import { reset } from '../../actions/auth';
+import { reset } from '../../redux/actions/auth';
 
 const Reset = () => {
   const classes = useStyles();

@@ -2,8 +2,8 @@ import { Component, Fragment } from 'react';
 // import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Switch} from 'react-router-dom';
 /* import Can from '../../casl/can'; */
-import ROUTES from '../../Routes/Routes';
-import Navbar from './Partials/Navbars/Navbar';
+import ROUTES from '../Routes/Routes';
+import Navbar from '../components/Home/Partials/Navbar';
 
 class AppLayout extends Component {
     render() {

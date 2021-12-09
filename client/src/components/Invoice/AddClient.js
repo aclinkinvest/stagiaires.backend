@@ -11,7 +11,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 
 import { useDispatch } from 'react-redux'
-import { createClient } from '../../actions/clientActions'
+import { createClient } from '../../redux/actions/clientActions'
 import { useLocation } from 'react-router-dom';
 
 import { useSnackbar } from 'react-simple-snackbar'

@@ -1,40 +1,24 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
-import ROUTESCANDIDAT from "../../Routes/RoutesCandidat";
+import ROUTESCANDIDAT from "../Routes/RoutesCandidat";
 
-import {Can} from '../../casl/can';
+/*import {Can} from '../../casl/can';
 import NavbarCandidat from "./Partials/Navbars/NavbarCandidat";
-import SidebarCandidat from "./Partials/Sidebars/SidebarCandidat";
+import SidebarCandidat from "./Partials/Sidebars/SidebarCandidat";*/
+import Header from "../components/Header/Header";
+import NavBar from "../components/NavBar/NavBar";
+
+const user = JSON.parse(localStorage.getItem('profile'))
 
 class DashboardCandidatLayout extends Component {
     render() {
 return (
     <Fragment>
-        <NavbarCandidat {...this.props} />
+        {/*<NavbarCandidat {...this.props} />*/}
+        <Header/>
+            {user && <NavBar />}
         <Switch>
-        <div className="utf-dashboard-container-aera"> 
-            <div className="utf-dashboard-sidebar-item">
-            <SidebarCandidat/>
-            </div>
-             
-                {/* {routes.map((route:any, idx) => {
-                    return route.component ? (
-                            <Route
-                                key={idx}
-                                path={route.path}
-                                exact={route.exact}
-                                render={props => (
-                                    <route.component {...props} /> 
-                                )} 
-                            />
-                    ) : (null);
-                })} */}
-                <ROUTESCANDIDAT/>
-            
-                <Redirect from="/candidat" to="/candidat/dashboard" />
-             
-            {/* <!-- Dashboard Content / End -->  */}
-        </div>
+            <ROUTESCANDIDAT/>
         </Switch>
     </Fragment>
 )

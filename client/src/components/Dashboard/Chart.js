@@ -22,7 +22,7 @@ function Chart({ paymentHistory }) {
   const series = [
 
     {
-      name: "Payment Recieved",
+      name: "Candidatures Envoyés",
       data: paymentReceived,
     },
   ];

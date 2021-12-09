@@ -1,14 +1,17 @@
 import React from 'react'
 import styles from './Home.module.css'
 import Typed from 'react-typed';
-import NewsletterSubscribe from '../../Layouts/Partials/NewsletterSubscribe';
-import NosMeilleursPartenaires from '../../Layouts/Partials/NosMeilleursPartenaires';
-import Footer from "../../Layouts/Partials/Footer";
+import NewsletterSubscribe from '../Home/Partials/NewsletterSubscribe';
+import NosMeilleursPartenaires from '../Home/Partials/NosMeilleursPartenaires';
+import Footer from "../Home/Partials/Footer";
 import { Link } from 'react-router-dom';
+import Navbar from "./Partials/Navbar";
+import Header from "../Header/Header";
 
 const Home = () => {
    
     return (
+        <><Header />
         <div>
         <div className="intro-banner"
         style={{
@@ -162,6 +165,7 @@ const Home = () => {
         <NewsletterSubscribe />
         <Footer />
       </div>
+        </>
     )
 }
 

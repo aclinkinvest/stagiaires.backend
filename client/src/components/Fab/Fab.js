@@ -26,17 +26,17 @@ const FabButton = () => {
             alwaysShowTitle={true}
           >
 
-            {location.pathname !== '/invoice' && (
+            {location.pathname !== '/dashboard' && (
               <Action
-                  text="New Invoice"
-                  onClick={() => window.location.href='/invoice'}
+                  text="Nouveau CV Pro"
+                  onClick={() => window.location.href='/dashboard'}
                 >
                   <CreateIcon />
               </Action>
             )}
 
             <Action
-                text="New Customer"
+                text="Nouvelle candidature"
                 onClick={() => setOpen((prev) => !prev)}
               >
                 <PersonAddIcon />

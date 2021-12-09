@@ -12,8 +12,8 @@ class Annonce extends React.Component<AnonceProps, AnonceState> {
 
     image: string;
     url: string;
-    style?: any;
-    constructor(props: any){
+    style : any;
+    constructor(props){
         super(props);
         this.image = this.props.image;
         this.url = this.props.url;

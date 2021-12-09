@@ -14,7 +14,7 @@ import DatePicker from './DatePicker'
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 import { useDispatch } from 'react-redux'
-import { updateInvoice } from '../../actions/invoiceActions';
+import { updateInvoice } from '../../redux/actions/invoiceActions';
 
 const styles = (theme) => ({
   root: {

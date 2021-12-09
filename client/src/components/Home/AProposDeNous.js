@@ -1,168 +1,162 @@
 import React from 'react'
-import styles from './Home.module.css'
-import Typed from 'react-typed';
-import NewsletterSubscribe from '../../Layouts/Partials/NewsletterSubscribe';
-import NosMeilleursPartenaires from '../../Layouts/Partials/NosMeilleursPartenaires';
-import Footer from "../../Layouts/Partials/Footer";
-import { Link } from 'react-router-dom';
+import NewsletterSubscribe from '../Home/Partials/NewsletterSubscribe';
+import NosMeilleursPartenaires from '../Home/Partials/NosMeilleursPartenaires';
+import Footer from "../Home/Partials/Footer";
+import Navbar from "./Partials/Navbar";
+import Header from "../Header/Header";
 
-const Home = () => {
-   
+const AProposDeNous = () => {
     return (
+        <><Header />
         <div>
-        <div className="intro-banner"
-        style={{
-          // paddingBottom:"70px",
-          backgroundImage: "url(images/bg-home2.jpg)",
-          backgroundSize: 'cover',
-          width: '100%',
-          backgroundPosition: '90%'
-        }}
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="utf-banner-headline-text-part  margin-top-5">
-                  <h3>A LA RECHERCHE
-                    <span className="typed-words">
-                      <Typed
-                        strings={["&nbsp;D'UN STAGE ?", "&nbsp;D'UN 1<sup>er</sup> EMPLOI ?"]}
-                        typeSpeed={50}
-                        backSpeed={50}
-                        backDelay={1000}
-                        startDelay={500}
-                        loop={true}
-                        showCursor={true}
+                {/*<BarIndex racine={"Accueil"}>A propos de nous</BarIndex>*/}
 
-                      />
-                  </span>
-                  </h3>
-                  <span className="banner_text">Bienvenue sur le premier assistant virtuel qui facilite  <br /> la vie des <b style={{ color: "white", fontSize: "26px;" }}>étudiants</b>, des <b style={{ color: "white", fontSize: "26px;" }}>jeunes diplômés</b> et des <b style={{ color: "white", fontSize: "26px;" }}>recruteurs</b> </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-xl-12">
-                <ul style={{ alignItems: "center" }} className="intro-stats margin-top-50">
-                  <li
-                    style={{
-                      marginRight: "60px", marginLeft: "60px",
-                      borderRadius: "4px", border: "1px solid rgba(255, 255, 255, 0.10)",
-                      lineHeight: "60px"
-                    }}
-                  ><Link to="/creer-compte-candidat">
-                      <strong style={{ fontSize: "25px", fontFamily: "arial" }} > <b>JE SUIS CANDIDAT</b> </strong>
-                    </Link>
-                  </li>
-                  <li
-                    style={{ backgroundColor: "#1E9A75", marginRight: "60px", borderRadius: "4px", border: "1px solid rgba(255, 255, 255, 0.10)", lineHeight: "60px" }}
-
-                  >
-                    <Link to="/creer-compte-recruteur">
-                      <strong style={{ fontSize: "25px" }}> <b>JE SUIS RECRUTEUR</b> </strong>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="section padding-top-40 padding-bottom-10">
-              <div className="container">
-                <div className="row">
-                  <div className="col-xl-12">
-
-                    <div className="col-md-12">
-                      <NosMeilleursPartenaires />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ textAlign: "center" }} className="centered">
-              <h3 style={{ color: "white", fontWeight: "bolder", fontSize: "30px" }}> <b>C'EST FACILE !</b></h3>
-            </div>
-          </div>
+                <div className="container  margin-top-40 margin-bottom-45">
+        <p>
+            <h2 className="text-center">
+          Dans un monde en pleine évolution, nous voulons aider <br /> les entreprises et leurs candidats à mieux se choisir, <br /> pour mieux travailler ensemble et plus longtemps.
+          </h2>
+        </p>
         </div>
+  <div className="container">
 
-        <div className="section padding-bottom-50">
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-3 col-md-6 col-sm-12">
-                <div className="icon-box with-line bg-box">
-                  <div className="utf-icon-box-circle">
-                    <div className="utf-icon-box-circle-inner"> <i className="icon-line-awesome-user-secret"></i></div>
-                  </div>
-                  <h3>1. Crée gratuitement ton CV Pro en ligne !</h3>
-                  <p>Création d'un espace privé Gratuit & meilleur matching des offres à ton profil,...</p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6 col-sm-12">
-                <div className="icon-box with-line bg-box">
-                  <div className="utf-icon-box-circle">
-                    <div className="utf-icon-box-circle-inner"> <i className="icon-line-awesome-user-plus"></i></div>
-                  </div>
-                  <h3>2. Sélectionne tes critères</h3>
-                  <p>Villes, Métiers, Poste, Date, etc….<br /><br /></p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6 col-sm-12">
-                <div className="icon-box bg-box">
-                  <div className="utf-icon-box-circle">
-                    <div className="utf-icon-box-circle-inner"> <i className="icon-line-awesome-edit"></i></div>
-                  </div>
-                  <h3>3. Postule en un clic <br /><br /></h3>
-                  <p>Nous pouvons le faire chaque jour automatiquement pour les offres qui te correspondent !</p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-md-6 col-sm-12">
-                <div className="icon-box bg-box">
-                  <div className="utf-icon-box-circle">
-                    <div className="utf-icon-box-circle-inner"> <i className="icon-line-awesome-save"></i></div>
-                  </div>
-                  <h3>4.	Suis en temps réel l’évolution de tes candidatures !</h3>
-                  <p>Reçois les notifications sur ton smartphone des recruteurs</p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="row">
+      <div className="col-xl-4 col-lg-4">
+        <div style={{height: "45px"}}></div>
+        <div>
+          <img src="images/notre_mission.jpg" height="270" width="350" alt="" />
         </div>
-
-        <div className="margin-bottom-80"
-          style={{
-            backgroundImage: "url(images/recruteur.jpg)",
-            backgroundSize: 'cover',
-            height: '100%',
-            width: '100%',
-            backgroundPosition: '100%'
-          }}>
-          <div className="text-content white-font" >
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-8 col-md-12 col-sm-12">
-                  <h2>Accroche recruteur</h2>
-                  <p>Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic type setting, remaining essentially unchanged.
-                    It was popularised.<br /><br />Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when an unknown printer took a galley of
-                    type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic type setting, remaining essentially unchanged.
-                    It was popularised.<br /><br /></p>
-
-                </div>
-                <div className="col-lg-4 col-md-6 col-sm-12">
-                  <div className="download-img">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <NewsletterSubscribe />
-        <Footer />
       </div>
+
+      <div className="col-xl-8 col-lg-8">
+        <div className="blog-post single-post margin-top-5">
+          <div className="utf-blog-post-content">
+            <p className="margin-bottom-20 centered">
+              <h1 style={{fontSize: "6em"}}>Notre mission</h1>
+               <span style={{fontSize: "19px"}}> Une recherche de stage ou de 1er emploi n’est jamais simple pour un candidat. Nous nous attachons à présenter chaque candidat sur un pied d’égalité et selon des critères objectifs.  <br />Parce que bien recruter est le premier enjeu business des entreprises, notre mission est de réduire le cycle de recrutement en proposant à l’entreprise et aux candidats, une nouvelle expérience humaine, efficace et collaborative.
+               </span>
+             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="row">
+
+      <div className="col-xl-8 col-lg-8">
+        <div className="blog-post single-post margin-top-5">
+          <div className="utf-blog-post-content">
+            <p>
+              <h1 style={{fontSize: "6em"}}>Notre solution</h1>
+              <span style={{fontSize: "19px", marginTop: "15px"}}>
+                Nous concevons et améliorons sans cesse, des logiciels qui s’articulent autour d’une plateforme unique dédiée au recrutement et spécifiquement conçue pour les entreprises et les candidats.
+              </span><br />
+              <div style={{height: "5px"}}></div>
+              <span style={{fontSize: "18px"}}> <b>Nos solution pour les entreprises s’appuie sur quatre concepts principaux :</b> </span> <br />
+              <ul style={{marginTop: "5px"}}>
+                <li>  Un progiciel piloté par les RH en multi-utilisateurs, associant les opérationnels au service de l’entreprise, pour gérer les recrutements et animer votre base candidats.</li>
+              <li>  Un site carrières clé en main, permettant d’engager et qualifier le candidat en déclinant votre marque employeur.</li>
+              <li> Une multidiffusion en un clic sur les autres plateformes.</li>
+              <li>  Une application de digitalisation de CV papier directement connectée à la plateforme.</li>
+              </ul>
+              <span style={{fontSize: "18px"}}><b>Nos solution pour les candidats s’appuie sur quatre concepts principaux :</b></span> <br />
+              <ul style={{marginTop: "5px"}}>
+              <li>  Une visibilité accrue avec le CV Pro en ligne qui permet aux recruteurs de sélectionner votre profil plus rapidement.</li>
+              <li>  Etablissez vos critères de recherche depuis votre profil et automatiquement nous sélectionnons pour vous les offres de stage ou de premier emploi les plus adaptées.</li>
+              <li>  Si vous le souhaitez, la plateforme peut automatiquement postuler à votre place aux offres correspondant à vos critères de recherche.</li>
+              <li>  Des notifications en temps réel vous sont envoyées sur votre mobile pour toutes nouvelles offres, candidatures, sélection par des recruteurs ou demandes de contact vous concernant.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-xl-4 col-lg-4">
+        <div style={{height: "100px"}}></div>
+        <div>
+          <img src="images/notre_solution2.jpg" height="500" width="350" alt="" />
+        </div>
+    </div>
+
+    <div className="row">
+      <div className="col-xl-4 col-lg-4">
+        <div style={{height: "42px"}}></div>
+        <div>
+          <img src="images/nos_valeurs2.jpg" height="300" width="350" alt="" />
+        </div>
+      </div>
+
+      <div className="col-xl-8 col-lg-8">
+        <div className="blog-post single-post margin-top-5">
+          <div className="utf-blog-post-content">
+             <p className="margin-top-20 margin-bottom-20">
+              <h1 style={{fontSize: "6em"}}>Nos valeurs</h1>
+              <span style={{fontSize: "19px"}}>
+                Nos valeurs sont le reflet de notre histoire, notre identité et nos ambitions.
+                Aujourd’hui comme hier, elles incarnent notre culture d’entreprise et s’expriment
+                au travers des actions quotidiennes de l’ensemble de nos équipes. Elles structurent
+                  notre approche professionnelle et façonnent nos relations avec l’ensemble de nos utilisateurs et partenaires.
+                  Nos valeurs sont aussi appliquées aux évolutions de la plateforme : éthique, simplicité, expertise, innovation, exigence,
+                écoute, flexibilité et confiance.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="row">
+
+      <div className="col-xl-8 col-lg-8">
+        <div className="blog-post single-post margin-top-5">
+          <div className="utf-blog-post-content">
+            <p>
+              <h1 style={{fontSize: "6em"}}>Notre équipe</h1>
+              <span style={{fontSize: "19px"}}>
+                XXX c’est d’abord une aventure d’êtres humains, qui se rejoignent sur une idée et des valeurs.
+                 L’entreprise est ainsi née de l’envie de faire quelque chose pour notre pays et pour les citoyens en général.
+                  Nous avons choisi l’emploi parce qu’il concentre beaucoup des valeurs que nous défendons à titre personnel :
+                   apprentissage, esprit d’équipe, entraide, bienveillance, engagement, sens de l’action, dépassement de soi,
+                   ambition, plaisir, passion, exigence, honnêteté, confiance, adaptation, autonomie.
+            </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-xl-4 col-lg-4">
+        <div style={{height: "45px"}}></div>
+        <div>
+          <img src="images/notre_equipe.png" height="295" width="350" alt="" />
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+            {/* <!-- Logo Carousel --> */}
+            <div className="section padding-top-60 padding-bottom-50">
+                <div className="container">
+                <div className="row">
+                    <div className="col-xl-12">
+                    <div className="utf-section-headline-item centered margin-top-0 margin-bottom-40">
+                        <h3>Nos partenaires</h3>
+                        <div className="utf-headline-display-inner-item"></div>
+                    </div>
+                    <div className="col-md-12">
+                        <NosMeilleursPartenaires />
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+            <NewsletterSubscribe />
+            <Footer />
+        </div>
+            </>
     )
 }
 
-export default Home
+export default AProposDeNous

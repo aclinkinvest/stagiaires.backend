@@ -1,28 +1,26 @@
-import { Route, Switch } from 'react-router-dom';
-import DashboardCandidat from '../Components/Pages/Dashboard/Candidat/DashboardCandidat';
-import MonProfil from '../Components/Pages/Dashboard/Candidat/MonProfil';
-import BanqueCV from '../Components/Pages/Dashboard/Candidat/BanqueCV';
-import CVPro from '../Components/Pages/Dashboard/Candidat/CVPro';
-import MesRecherches from '../Components/Pages/Dashboard/Candidat/MesRecherches';
-import MesDemandes from '../Components/Pages/Dashboard/Candidat/MesDemandes';
-import CreateCVPro from '../Components/Pages/Dashboard/Candidat/CreateCVPro';
-import ImportCV from '../Components/Pages/Dashboard/Candidat/ImportCV';
+import {Redirect, Route, Switch} from 'react-router-dom';
+import Invoice from "../components/Invoice/Invoice";
+import Invoices from "../components/Invoices/Invoices";
+import Settings from "../components/Settings/Settings";
+import Dashboard from "../components/Dashboard/Dashboard";
+import ClientList from "../components/Clients/ClientList";
+import Forgot from "../components/Password/Forgot";
+import Reset from "../components/Password/Reset";
+import InvoiceDetails from "../components/InvoiceDetails/InvoiceDetails";
 
 const ROUTESCANDIDAT = () => {
     return(
         <Switch>
-            
-            <Route exact path="/candidat/dashboard" component={DashboardCandidat} />
-            <Route exact path="/candidat/profil" component={MonProfil} />
-            
-            <Route exact path="/candidat/demandes" component={MesDemandes} />
-            <Route exact path="/candidat/recherches" component={MesRecherches} />
-
-            <Route exact path="/candidat/banque-de-cv" component={BanqueCV} />
-            <Route exact path="/candidat/cv-pro" component={CVPro} />
-            <Route exact path="/candidat/ajouter-cv-pro" component={CreateCVPro} />
-            <Route exact path="/candidat/importer-cv" component={ImportCV} />
-            
+          <Route path="/invoice" exact component={Invoice} />
+          <Route path="/edit/invoice/:id" exact component={Invoice} />
+          <Route path="/invoice/:id" exact component={InvoiceDetails} />
+          <Route path="/invoices" exact component={Invoices} />
+          <Route path="/settings" exact component={Settings} />
+          <Route path="/dashboard" exact component={Dashboard} />
+          <Route path="/customers" exact component={ClientList} />
+          <Route path="/forgot" exact component={Forgot} />
+          <Route path="/reset/:token" exact component={Reset} />
+          <Redirect exact from="/new-invoice" to="/invoice" />
         </Switch>
     );
 }
