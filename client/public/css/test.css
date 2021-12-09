@@ -1,0 +1,97 @@
+.tab .nav-tabs{
+    border-bottom:0px;
+}
+.tab .nav-tabs li{
+    border-right:1px solid #ddd;
+}
+.tab .nav-tabs li:last-child{
+    border-right:0px solid #ddd;
+}
+.tab .nav-tabs li:first-child a{
+    border-left:1px solid #ddd;
+}
+.tab .nav-tabs li a {
+    color: #868686;
+    background:#fff;
+    border-radius:0;
+    font-size:16px;
+    margin-right:-1px;
+    padding: 5.5px 30px;
+    border-top:1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+}
+.nav-tabs li:first-child a{
+    border-radius: 5px 0 0 5px;
+}
+.nav-tabs li:last-child a{
+    border-radius: 0 5px 5px 0;
+    border-right:1px solid #d3d3d3;
+}
+.tab .nav-tabs li a:hover{
+    background:#eee;
+}
+.tab .nav-tabs li a:hover:before{
+    border-left: 15px solid #eee;
+}
+.tab .nav-tabs li.active a:after,
+.tab .nav-tabs li a:after{
+    content:"";
+    border-left: 17px solid #ff007a;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    position: absolute;
+    top: 0px;
+    right: -17px;
+    z-index:1;
+}
+.tab .nav-tabs li a:after{
+    border-left: 17px solid #d3d3d3;
+}
+.tab .nav-tabs li.active a:before{
+    border-left: 17px solid #ff007a;
+}
+.tab .nav-tabs li a:before{
+    border-bottom: 15px solid rgba(0, 0, 0, 0);
+    border-left: 15px solid #fff;
+    border-top: 15px solid rgba(0, 0, 0, 0);
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 2px;
+    z-index: 2;
+}
+.tab .nav-tabs li.active > a,
+.tab .nav-tabs > li.active > a:focus,
+.tab .nav-tabs > li.active > a:hover {
+    border: none;
+    color:#fff;
+    background:#FF007A;
+    border-top:1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+}
+.tab .nav-tabs li:last-child.active a:after,
+.tab .nav-tabs li:last-child a:after{
+    border: none;
+}
+.tab .nav-tabs li:last-child a:after,
+.tab .nav-tabs li:last-child a:hover:before,
+.tab .nav-tabs li:last-child.active a:before,
+.tab .nav-tabs li:last-child a:before{
+    border-left: none;
+}
+.tab .tab-content{
+    padding:12px;
+    color:#5a5c5d;
+    margin-top:2%;
+    font-size: 14px;
+    border: 1px solid #fff;
+}
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    
+    border-left: 60px solid green;
+  }

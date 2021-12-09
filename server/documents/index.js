@@ -114,7 +114,7 @@ img {
         <div>
           ${company.logo ? `<img src=${company?.logo} />` : `<h2>___</h2>`}
         </div>
-        <div class="receipt-id" style="margin-top: -120px 0 40px 0">
+        <div class="receipt-id" style={marginTop: "-120px 0 40px 0"}>
             
         </div>
 </section>

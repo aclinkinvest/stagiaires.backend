@@ -1,0 +1,64 @@
+.main-tabs ul li a {
+    height: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: white;
+}
+
+.ttt{
+    background-image: url('../images/tunnel/tunnel_bg2.png');
+    /* bottom: 50px; */
+}
+
+.main-tabs ul li {
+    color: white;
+    align-items: center;
+    /* width: 80px;  */
+    height: 70px; 
+    /* border-top: 30px solid transparent; */
+    /* border-bottom: 30px solid transparent; */
+    
+    /* border-left: 5px solid green; */
+    background: url('../images/tunnel/tab.png') no-repeat; 
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: 100% 100%;
+  }
+#tab_selected {
+    color: white;
+    align-items: center;
+    /* width: 80px;  */
+    height: 70px; 
+    /* border-top: 30px solid transparent; */
+    /* border-bottom: 30px solid transparent; */
+    
+    /* border-left: 5px solid green; */
+    background: url('../images/tunnel/tab_selected.png') no-repeat; 
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: 100% 100%;
+  }
+#cv {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+#cv::-webkit-scrollbar {
+    display: none;
+}
+
+#datatable tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#datatable tr td:nth-child(1) {
+    text-align: start;
+    vertical-align: middle;
+}
+
+#pdr-note-comment::placeholder {
+    font-weight: bold;
+  }

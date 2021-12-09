@@ -12,6 +12,8 @@ const USER =  process.env.SMTP_USER
 const PASS =  process.env.SMTP_PASS
 
 import User from '../models/userModel.js'
+import Candidate from "../models/candidateModel.js";
+import Recruiter from "../models/RecruiterModel.js";
 
 
 export const signin = async (req, res)=> {
@@ -40,7 +42,7 @@ export const signin = async (req, res)=> {
 
 
 export const signup = async (req, res)=> {
-    const { email, password, confirmPassword, firstName, lastName, bio } = req.body
+    const { email, password, confirmPassword, firstName, lastName, bio, role } = req.body
 
     try {
         const existingUser = await User.findOne({ email })
@@ -51,7 +53,11 @@ export const signup = async (req, res)=> {
         
         const hashedPassword = await bcrypt.hash(password, 12)
 
-        const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}`, bio })
+        const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}`, bio, role })
+
+        if (role !== "recruiter") {
+            await Candidate.create({ user: result})
+        } else await Recruiter.create({ user: result})
 
         const token = jwt.sign({ email: result.email, id: result._id }, SECRET, { expiresIn: "1h" })
         
@@ -110,17 +116,17 @@ export const forgotPassword = (req,res)=>{
             user.save().then((result)=>{
                 transporter.sendMail({
                     to:user.email,
-                    from:"Arc Invoice <hello@arcinvoice.com>",
-                    subject:"Password reset request",
+                    from:"Stagiaires.tg <support@stagiaires.tg>",
+                    subject:"Réinitialisation de votre mot de passe",
                     html:`
-                    <p>You requested for password reset from Arc Invoicing application</p>
-                    <h5>Please click this <a href="https://arcinvoice.com/reset/${token}">link</a> to reset your password</h5>
-                    <p>Link not clickable?, copy and paste the following url in your address bar.</p>
-                    <p>https://arcinvoice.com/reset/${token}</p>
-                    <P>If this was a mistake, just ignore this email and nothing will happen.</P>
+                    <p>Vous avez demandé une réinitialisation de votre mot de passe sur Stagiaires.tg</p>
+                    <h5>Veuillez cliquer sur ce <a href="https://stagiaires.tg/reset/${token}">lien</a> pour ce faire</h5>
+                    <p>Le lien n'est pas cliquable, copiez et collez l'adresse suivante dans votre barre d'adresse.</p>
+                    <p>https://stagiaires.tg/reset/${token}</p>
+                    <P>Si c'était une erreur, ignorez cet e-mail et rien ne se passera.</P>
                     `
                 })
-                res.json({message:"check your email"})
+                res.json({message:"Vérifiez votre email"})
             }).catch((err) => console.log(err))
   
         })
