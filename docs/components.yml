@@ -3,8 +3,6 @@ components:
     User:
       type: object
       properties:
-        id:
-          type: string
         email:
           type: string
           format: email
@@ -18,6 +16,79 @@ components:
         email: fake@example.com
         name: fake name
         role: user
+
+    Recruiter:
+      type: object
+      properties:
+        user:
+          type: object
+        profilePhoto:
+          type: string
+        isManager:
+          type: boolean
+        company:
+          type: object
+
+
+    Candidate:
+      type: object
+      properties:
+        user:
+          type: object
+        lastName:
+          type: string
+        firstName:
+          type: string
+        available:
+          type: boolean
+        cvPro:
+          type: object
+        school:
+          type: object
+      example:
+
+    Company:
+      type: object
+      properties:
+        name:
+          type: string
+        location:
+          type: string
+        siretNumber:
+          type: string
+        companyProfilePhoto:
+          type: string
+      example:
+
+
+    Offer:
+      type: object
+      properties:
+        name:
+          type: string
+        location:
+          type: string
+        siretNumber:
+          type: string
+        companyProfilePhoto:
+          type: string
+      example:
+
+
+
+    Application:
+      type: object
+      properties:
+        name:
+          type: string
+        location:
+          type: string
+        siretNumber:
+          type: string
+        companyProfilePhoto:
+          type: string
+      example:
+
 
 
     Error:

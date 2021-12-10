@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../stagiaires.tg.webapp/recruiter_panel/.idea/recruiter_panel.iml" filepath="$PROJECT_DIR$/../stagiaires.tg.webapp/recruiter_panel/.idea/recruiter_panel.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/stagiaires.backend.iml" filepath="$PROJECT_DIR$/.idea/stagiaires.backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../stagiaires.frontend.c/.idea/stagiaires.frontend.c.iml" filepath="$PROJECT_DIR$/../stagiaires.frontend.c/.idea/stagiaires.frontend.c.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../stagiaires.frontend.r/.idea/stagiaires.frontend.r.iml" filepath="$PROJECT_DIR$/../stagiaires.frontend.r/.idea/stagiaires.frontend.r.iml" />
     </modules>
   </component>
 </project>
