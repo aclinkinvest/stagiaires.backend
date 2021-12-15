@@ -1,0 +1,21 @@
+POST http://localhost:5000/default/school
+Content-Type: application/json
+
+{
+  "name": "IPNET"
+}
+
+###
+POST http://localhost:5000/users/signin
+Content-Type: application/json
+
+{
+  "email": "fuegoleonkkv@gmail.com",
+  "password": "Wis6699++"
+}
+
+###
+GET http://localhost:5000/clients
+Accept: application/json
+
+###

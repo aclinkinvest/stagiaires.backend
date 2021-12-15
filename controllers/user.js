@@ -16,6 +16,25 @@ import Candidate from "../models/candidateModel.js";
 import Recruiter from "../models/RecruiterModel.js";
 
 
+export const me = (req, res) => {
+  res.status(200).json({ data: req.user })
+}
+
+export const updateMe = async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(req.user._id, req.body, {
+      new: true
+    })
+      .lean()
+      .exec()
+
+    res.status(200).json({ data: user })
+  } catch (e) {
+    console.error(e)
+    res.status(400).end()
+  }
+}
+
 export const signin = async (req, res)=> {
     const { email, password } = req.body //Coming from formData
 

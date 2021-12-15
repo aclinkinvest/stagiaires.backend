@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const cvProSchema = mongoose.Schema({
+const offerSchema = mongoose.Schema({
     recruiter: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'Recruiter',
@@ -25,6 +25,6 @@ const cvProSchema = mongoose.Schema({
 
 })
 
-const CvPro = mongoose.model('CvPro', cvProSchema)
+const Offer = mongoose.model('Offer', offerSchema)
 
-export default CvPro
+export default Offer

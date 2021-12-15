@@ -84,14 +84,14 @@ router.delete('/:id', deleteProfile)
  *         required: true
  *         schema:
  *           type: string
- *         description: User id
+ *         description: Recruiter id
  *     responses:
  *       "200":
  *         description: OK
  *         content:
  *           application/json:
  *             schema:
- *                $ref: '#/components/schemas/User'
+ *                $ref: '#/components/schemas/Recruiter'
  *       "401":
  *         $ref: '#/components/responses/Unauthorized'
  *       "403":
@@ -111,7 +111,7 @@ router.delete('/:id', deleteProfile)
  *         required: true
  *         schema:
  *           type: string
- *         description: User id
+ *         description: Recruiter id
  *     requestBody:
  *       required: true
  *       content:
@@ -140,7 +140,7 @@ router.delete('/:id', deleteProfile)
  *         content:
  *           application/json:
  *             schema:
- *                $ref: '#/components/schemas/User'
+ *                $ref: '#/components/schemas/Recruiter'
  *       "400":
  *         $ref: '#/components/responses/DuplicateEmail'
  *       "401":
@@ -162,7 +162,7 @@ router.delete('/:id', deleteProfile)
  *         required: true
  *         schema:
  *           type: string
- *         description: User id
+ *         description: Recruiter id
  *     responses:
  *       "200":
  *         description: No content
@@ -189,14 +189,14 @@ router.delete('/:id', deleteProfile)
  *         required: true
  *         schema:
  *           type: string
- *         description: User id
+ *         description: Candidate id
  *     responses:
  *       "200":
  *         description: OK
  *         content:
  *           application/json:
  *             schema:
- *                $ref: '#/components/schemas/User'
+ *                $ref: '#/components/schemas/Candidate'
  *       "401":
  *         $ref: '#/components/responses/Unauthorized'
  *       "403":
@@ -216,7 +216,7 @@ router.delete('/:id', deleteProfile)
  *         required: true
  *         schema:
  *           type: string
- *         description: User id
+ *         description: Candidate id
  *     requestBody:
  *       required: true
  *       content:
@@ -245,7 +245,7 @@ router.delete('/:id', deleteProfile)
  *         content:
  *           application/json:
  *             schema:
- *                $ref: '#/components/schemas/User'
+ *                $ref: '#/components/schemas/Candidate'
  *       "400":
  *         $ref: '#/components/responses/DuplicateEmail'
  *       "401":
@@ -267,7 +267,7 @@ router.delete('/:id', deleteProfile)
  *         required: true
  *         schema:
  *           type: string
- *         description: User id
+ *         description: Candidate id
  *     responses:
  *       "200":
  *         description: No content
@@ -459,30 +459,69 @@ router.delete('/:id', deleteProfile)
  * @swagger
  * /recruiter/resume-bank:
  *   get:
- *     summary: Browse own and other resumes /sous abonnement
- *     tags: [CVthèque]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             required:
- *               - refreshToken
- *             properties:
- *               refreshToken:
- *                 type: string
- *             example:
- *
+ *     summary: Get all resumes
+ *     description: Only admins can retrieve all users.
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: name
+ *         schema:
+ *           type: string
+ *         description: User name
+ *       - in: query
+ *         name: role
+ *         schema:
+ *           type: string
+ *         description: User role
+ *       - in: query
+ *         name: sortBy
+ *         schema:
+ *           type: string
+ *         description: sort by query in the form of field:desc/asc (ex. name:asc)
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *         default: 10
+ *         description: Maximum number of users
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *           default: 1
+ *         description: Page number
  *     responses:
  *       "200":
  *         description: OK
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/RecruiterTokens'
+ *               type: object
+ *               properties:
+ *                 results:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/User'
+ *                 page:
+ *                   type: integer
+ *                   example: 1
+ *                 limit:
+ *                   type: integer
+ *                   example: 10
+ *                 totalPages:
+ *                   type: integer
+ *                   example: 1
+ *                 totalResults:
+ *                   type: integer
+ *                   example: 1
  *       "401":
  *         $ref: '#/components/responses/Unauthorized'
+ *       "403":
+ *         $ref: '#/components/responses/Forbidden'
  */
 
 /**

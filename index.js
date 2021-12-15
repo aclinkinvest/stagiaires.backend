@@ -7,32 +7,7 @@ import nodemailer from 'nodemailer'
 import pdf from 'html-pdf'
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-/*
-const swaggerJsDoc = require('swagger-jsdoc')
-const swaggerUi = require('swagger-ui-express')
 
-const swaggerOptions = {
-    definition:{
-        openapi: '3.0.0',
-        info: {
-            title: 'stagiaires-tg API documentation',
-            version: '1.0.0',
-            description: 'stagiaires-tg API documentation',
-            contact: {
-              name: 'Wisdom TOHE',
-              url: 'https://github.com/khafrica/stagiaires.backend.git',
-            },
-          },
-          servers: [
-            {
-              url: `http://localhost:5000`,
-            },
-          ],
-        apis:"index.js"
-    }
-}
-
-const swaggerDocs = swaggerJsDoc(swaggerOptions)*/
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -43,6 +18,7 @@ import clientRoutes from './routes/clients.js'
 import userRoutes from './routes/userRoutes.js'
 import profile from './routes/profile.js'
 import docs from './routes/docs.js'
+import defaultRoutes from './routes/defaultRoutesFromCrud.js'
 import pdfTemplate from './documents/index.js'
 // import invoiceTemplate from './documents/invoice.js'
 import emailTemplate from './documents/email.js'
@@ -54,70 +30,7 @@ app.use((express.json({ limit: "30mb", extended: true})))
 app.use((express.urlencoded({ limit: "30mb", extended: true})))
 app.use((cors()))
 
-/*
-app.use('/docs',swaggerUi.serve, swaggerUi.setup(swaggerDocs))
-
-/!**
- * @swagger
- * definitions:
- *  User:
- *   type: object
- *   properties:
- *    name:
- *     type: string
- *     description: name of the user
- *     example: 'Wisdom Tohe'
- *    role:
- *     type: string
- *     description: role associated to the account (candidate, recruiter, collaborator, support, admin)
- *     example: 'candidate'
- *    email:
- *     type: string
- *     description: email of the user
- *     example: 'candidate@satagiaires.tg'
- *
- *  Candidate:
- *   type: object
- *   properties:
- *    user:
- *     type: object
- *     description: account associated to actual candidate
- *    school:
- *     type: object
- *     description: actual school document
- *    cvPro:
- *     type: object
- *     description: candidate's CV on the platform
- *    schoolName:
- *     type: string
- *     description: candidate provenance
- *    cvFile:
- *     type: buffer
- *     description: Cv uploaded by the candidate
- *    available:
- *     type: boolean
- *     description: candidate is available or not
- *
- *  Recruiter:
- *   type: object
- *   properties:
- *    user:
- *     type: object
- *     description: account associated to actual recruiter
- *    company:
- *     type: object
- *     description: actual company document
- *    isManager:
- *     type: boolean
- *     description: recruiter is manager or collaborator
- *    companyName:
- *     type: string
- *     description: provided at account creation
- *!/
-
-
-*/
-
+app.use('/default', defaultRoutes)
 app.use('/invoices', invoiceRoutes)
 app.use('/cv-pros', cvProRoutes)
 app.use('/clients', clientRoutes)
